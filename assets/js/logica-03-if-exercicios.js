@@ -301,3 +301,392 @@ function exercicio21() {
         alert("Ordem crescente: " + x + ", " + y + ", " + z);
     }
 }
+
+function exercicio22() {
+    let numero1 = parseFloat(prompt("Digite o primeiro numero:"));
+    let numero2 = parseFloat(prompt("Digite o segundo numero:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro numero:"));
+
+    if (numero1 > numero2 && numero1 > numero3) {
+        alert("O maior número é: " + numero1);
+    } else if (numero2 > numero1 && numero2 > numero3) {
+        alert("O maior número é: " + numero2);
+    } else {
+        alert("O maior número é: " + numero3);
+    }
+
+}
+
+function exercicio23() {
+    let numero1 = parseFloat(prompt("Digite o primeiro numero:"));
+    let numero2 = parseFloat(prompt("Digite o segundo numero:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro numero:"));
+
+    if (numero1 < numero2 && numero1 < numero3) {
+        alert("O menor número é: " + numero1);
+    } else if (numero2 < numero1 && numero2 < numero3) {
+        alert("O menor número é: " + numero2);
+    } else {
+        alert("O menor número é: " + numero3);
+    }
+}
+
+function exercicio24() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+    if (numero1 < numero2 && numero2 < numero3) {
+        alert("Os números estão em ordem crescente.");
+    } else if (numero1 > numero2 && numero2 > numero3) {
+        alert("Os números estão em ordem decrescente.");
+    } else {
+        alert("Os números estão sem ordem definida.");
+    }
+}
+
+function exercicio25() {
+    let idade = parseInt(prompt("Digite a idade:"));
+
+    if (idade >= 0 && idade <= 12) {
+        alert("Criança");
+    } else if (idade >= 13 && idade <= 17) {
+        alert("Adolescente");
+    } else if (idade >= 18 && idade <= 59) {
+        alert("Adulto");
+    } else if (idade >= 60) {
+        alert("Idoso");
+    } else {
+        alert("Idade inválida");
+    }
+}
+
+function exercicio26() {
+    let valorCompra = parseFloat(prompt("Digite o valor da compra:"));
+    let formaPagamento = parseInt(prompt(
+        "Escolha a forma de pagamento:\n" +
+        "1 - Dinheiro ou Pix\n" +
+        "2 - Cartão de débito\n" +
+        "3 - Cartão de crédito"
+    ));
+
+    let valorFinal;
+
+    if (formaPagamento === 1) {
+        valorFinal = valorCompra - (valorCompra * 0.10);
+        alert("Valor final: R$ " + valorFinal.toFixed(2));
+    } else if (formaPagamento === 2) {
+        valorFinal = valorCompra - (valorCompra * 0.05);
+        alert("Valor final: R$ " + valorFinal.toFixed(2));
+    } else if (formaPagamento === 3) {
+        valorFinal = valorCompra + (valorCompra * 0.10);
+        alert("Valor final: R$ " + valorFinal.toFixed(2));
+    } else {
+        alert("Forma de pagamento inválida.");
+    }
+}
+
+function exercicio27() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+    if (numero1 > 0 && numero2 > 0) {
+        alert("Os dois números são positivos.");
+    } else if (numero1 < 0 && numero2 < 0) {
+        alert("Os dois números são negativos.");
+    } else if ((numero1 > 0 && numero2 < 0) || (numero1 < 0 && numero2 > 0)) {
+        alert("Há um positivo e um negativo.");
+    } else {
+        alert("Pelo menos um dos números é zero.");
+    }
+}
+
+function exercicio28() {
+    let nota1 = parseFloat(prompt("Digite a primeira nota:"));
+    let nota2 = parseFloat(prompt("Digite a segunda nota:"));
+    let nota3 = parseFloat(prompt("Digite a terceira nota:"));
+    let faltas = parseInt(prompt("Digite a quantidade de faltas:"));
+
+    let media = (nota1 + nota2 + nota3) / 3;
+
+    if (media >= 7 && faltas <= 10) {
+        alert("Média: " + media.toFixed(2) + "\nAluno aprovado.");
+    } else if (media >= 5 && media < 7 && faltas <= 10) {
+        alert("Média: " + media.toFixed(2) + "\nAluno em recuperação.");
+    } else if (faltas > 10) {
+        alert("Média: " + media.toFixed(2) + "\nAluno reprovado por faltas.");
+    } else {
+        alert("Média: " + media.toFixed(2) + "\nAluno reprovado por nota.");
+    }
+}
+
+function exercicio29() {
+    let numero = parseInt(prompt("Digite um número:"));
+
+    if (numero % 2 === 0 && numero % 3 === 0) {
+        alert("O número é divisível por 2 e por 3.");
+    } else if (numero % 2 === 0) {
+        alert("O número é divisível por 2.");
+    } else if (numero % 3 === 0) {
+        alert("O número é divisível por 3.");
+    } else {
+        alert("O número não é divisível por 2 nem por 3.");
+    }
+}
+
+function exercicio30() {
+    let ano = parseInt(prompt("Digite um ano:"));
+
+    if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
+        alert("O ano é bissexto.");
+    } else {
+        alert("O ano não é bissexto.");
+    }
+}
+
+function exercicio31() {
+    let lado1 = parseFloat(prompt("Digite o primeiro lado:"));
+    let lado2 = parseFloat(prompt("Digite o segundo lado:"));
+    let lado3 = parseFloat(prompt("Digite o terceiro lado:"));
+
+    if (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2) {
+        if (lado1 === lado2 && lado2 === lado3) {
+            alert("Triângulo equilátero.");
+        } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+            alert("Triângulo isósceles.");
+        } else {
+            alert("Triângulo escaleno.");
+        }
+    } else {
+        alert("Não é possível formar um triângulo.");
+    }
+}
+
+function exercicio32() {
+    let numero = parseFloat(prompt("Digite um número:"));
+
+    if (numero >= 50 && numero <= 100) {
+        alert("O número está entre 50 e 100.");
+    } else {
+        alert("O número está fora do intervalo.");
+    }
+}
+
+function exercicio33() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+    let diferenca = numero1 - numero2;
+
+    if (diferenca > 0) {
+        alert("Diferença: " + diferenca + "\nResultado positivo.");
+    } else if (diferenca < 0) {
+        alert("Diferença: " + diferenca + "\nResultado negativo.");
+    } else {
+        alert("Diferença: " + diferenca + "\nResultado zero.");
+    }
+}
+
+function exercicio34() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+    let media = (numero1 + numero2 + numero3) / 3;
+
+    if (media >= 7) {
+        alert("Média: " + media.toFixed(2) + "\nMédia acima ou igual a 7.");
+    } else {
+        alert("Média: " + media.toFixed(2) + "\nMédia abaixo de 7.");
+    }
+}
+
+function exercicio35() {
+    let numero = parseInt(prompt("Digite um número:"));
+
+    if (numero >= 10 || numero <= -10) {
+        alert("O número possui mais de um dígito.");
+    } else {
+        alert("O número possui apenas um dígito.");
+    }
+}
+
+function exercicio36() {
+    let numero = parseInt(prompt("Digite um número:"));
+
+    if (numero === 5 || numero === 10 || numero === 15 || numero === 20) {
+        alert("O número pertence ao conjunto.");
+    } else {
+        alert("O número não pertence ao conjunto.");
+    }
+}
+
+function exercicio37() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+    if (numero1 === numero2) {
+        alert("Os números são iguais.");
+    } else if (numero1 > numero2) {
+        alert("Os números são diferentes.\nO maior é: " + numero1);
+    } else {
+        alert("Os números são diferentes.\nO maior é: " + numero2);
+    }
+}
+
+function exercicio38() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+    if (numero1 < 0 || numero2 < 0 || numero3 < 0) {
+        alert("Pelo menos um número é negativo.");
+    } else {
+        alert("Nenhum número é negativo.");
+    }
+}
+
+function exercicio39() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+    if (
+        (numero1 > 0 && numero2 <= 0 && numero3 <= 0) ||
+        (numero1 <= 0 && numero2 > 0 && numero3 <= 0) ||
+        (numero1 <= 0 && numero2 <= 0 && numero3 > 0)
+    ) {
+        alert("Apenas um número é positivo.");
+    } else {
+        alert("Não existe apenas um número positivo.");
+    }
+}
+
+function exercicio40() {
+    let numero1 = parseInt(prompt("Digite o primeiro número:"));
+    let numero2 = parseInt(prompt("Digite o segundo número:"));
+
+    if (numero2 === 0) {
+        alert("Não é possível dividir por zero.");
+    } else if (numero1 % numero2 === 0) {
+        alert("O primeiro número é múltiplo do segundo.");
+    } else {
+        alert("O primeiro número não é múltiplo do segundo.");
+    }
+}
+
+function exercicio41() {
+    let numero = parseFloat(prompt("Digite um número:"));
+
+    if (numero >= 10 && numero <= 20) {
+        alert("O número está no intervalo de 10 a 20.");
+    } else if (numero >= 50 && numero <= 100) {
+        alert("O número está no intervalo de 50 a 100.");
+    } else {
+        alert("O número não está em nenhum intervalo.");
+    }
+}
+
+function exercicio42() {
+    let numero = parseFloat(prompt("Digite um número:"));
+
+    if (numero < 30 || numero > 60) {
+        alert("O número não pertence ao intervalo de 30 a 60.");
+    } else {
+        alert("O número pertence ao intervalo de 30 a 60.");
+    }
+}
+
+function exercicio43() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+    if (numero1 !== numero2 && numero1 !== numero3 && numero2 !== numero3) {
+        alert("Todos são diferentes.");
+    } else {
+        alert("Nem todos são diferentes.");
+    }
+}
+
+function exercicio44() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+    if (numero1 === numero2 || numero1 === numero3 || numero2 === numero3) {
+        alert("Existem valores repetidos.");
+    } else {
+        alert("Não existem valores repetidos.");
+    }
+}
+
+function exercicio45() {
+    let valorCompra = parseFloat(prompt("Digite o valor da compra:"));
+    let valorFinal;
+
+    if (valorCompra >= 200) {
+        valorFinal = valorCompra - (valorCompra * 0.10);
+        alert("Valor final com desconto: R$ " + valorFinal.toFixed(2));
+    } else {
+        valorFinal = valorCompra;
+        alert("Valor final sem desconto: R$ " + valorFinal.toFixed(2));
+    }
+}
+
+function exercicio46() {
+    let idade = parseInt(prompt("Digite sua idade:"));
+
+    if (idade >= 18) {
+        alert("Acesso permitido.");
+    } else {
+        alert("Acesso negado.");
+    }
+}
+
+function exercicio47() {
+    let numero = parseInt(prompt("Digite um número:"));
+
+    if (numero % 5 === 0 && numero % 10 === 0) {
+        alert("O número é divisível por 5 e por 10.");
+    } else if (numero % 5 === 0) {
+        alert("O número é divisível por 5.");
+    } else if (numero % 10 === 0) {
+        alert("O número é divisível por 10.");
+    } else {
+        alert("O número não é divisível por 5 nem por 10.");
+    }
+}
+
+function exercicio48() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+    if (numero1 >= 1 && numero1 <= 100 && numero2 >= 1 && numero2 <= 100) {
+        alert("Os dois números estão dentro do intervalo.");
+    } else {
+        alert("Um ou os dois números estão fora do intervalo.");
+    }
+}
+
+function exercicio49() {
+    let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    let numero2 = parseFloat(prompt("Digite o segundo número:"));
+    let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+    if (numero1 + numero2 > numero3) {
+        alert("A soma do primeiro com o segundo é maior que o terceiro.");
+    } else {
+        alert("A soma do primeiro com o segundo não é maior que o terceiro.");
+    }
+}
+
+function exercicio50() {
+    let numero = parseInt(prompt("Digite um número:"));
+
+    if (numero > 0 && numero % 2 === 0) {
+        alert("O número é positivo e par.");
+    } else {
+        alert("O número não atende às duas condições.");
+    }
+}
